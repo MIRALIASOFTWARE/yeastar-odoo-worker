@@ -38,7 +38,7 @@ services:
     labels:
       - traefik.enable=true
       - traefik.docker.network=dokploy-network
-      - traefik.http.routers.yeastar-gw.rule=Host(`api.tudominio.com`)
+      - traefik.http.routers.yeastar-gw.rule=Host(`yeastar-worker.miraliasoftware.cu`)
       - traefik.http.routers.yeastar-gw.entrypoints=websecure
       - traefik.http.routers.yeastar-gw.tls.certResolver=letsencrypt
       - traefik.http.services.yeastar-gw.loadbalancer.server.port=8080
