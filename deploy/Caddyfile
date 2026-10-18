@@ -1,0 +1,5 @@
+# Caddy obtiene y renueva el certificado HTTPS automáticamente (Let's Encrypt).
+# Requisitos: un dominio apuntando a la IP del VPS y los puertos 80 y 443 abiertos.
+api.tudominio.com {
+    reverse_proxy 127.0.0.1:8080
+}

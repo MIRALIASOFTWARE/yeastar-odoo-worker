@@ -1,0 +1,19 @@
+[Unit]
+Description=Pasarela Yeastar - Odoo (citas y tickets)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=yeastar-gw
+Group=yeastar-gw
+EnvironmentFile=/etc/yeastar-odoo-gateway.env
+ExecStart=/opt/yeastar-odoo-gateway/yeastar-odoo-gateway
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,4 @@
+# Sustituye por tu dominio. Caddy obtiene y renueva el certificado HTTPS solo.
+api.tudominio.com {
+    reverse_proxy gateway:8080
+}
