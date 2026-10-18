@@ -1,15 +1,47 @@
+# Para desplegar en Dokploy como servicio "Compose" desde este repositorio.
+#
+# Antes de desplegar:
+#   1) Cambia api.tudominio.com por tu dominio en la etiqueta "rule".
+#   2) Crea un registro DNS tipo A de ese dominio hacia la IP del servidor.
+#   3) En la pestaña Environment de Dokploy define las variables (ver .env.example).
+#
+# Traefik (el de Dokploy) publica el servicio y emite el certificado HTTPS.
+# Si tu Dokploy usa Cloudflare con la configuración por defecto, cambia
+# entrypoints=websecure por entrypoints=web y elimina la línea de certResolver.
+
 services:
   gateway:
     build: .
-    image: yeastar-odoo-gateway:latest
     restart: unless-stopped
-    env_file: gateway.env
     environment:
-      # Dentro del contenedor debe escuchar en todas las interfaces
-      BIND_ADDR: 0.0.0.0:8080
-    # Solo visible para Caddy dentro de la red de Docker (no se publica al exterior)
+      BIND_ADDR: "0.0.0.0:8080"
+      # Obligatorias: si faltan, el despliegue se detiene con un mensaje claro
+      ODOO_URL: "${ODOO_URL:?Falta ODOO_URL en Environment}"
+      ODOO_DB: "${ODOO_DB:?Falta ODOO_DB en Environment}"
+      ODOO_API_KEY: "${ODOO_API_KEY:?Falta ODOO_API_KEY en Environment}"
+      PBX_WEBHOOK_SECRET: "${PBX_WEBHOOK_SECRET:?Falta PBX_WEBHOOK_SECRET en Environment}"
+      # Opcionales: vacías = el servicio usa su valor por defecto
+      ODOO_UID: "${ODOO_UID:-}"
+      BUSINESS_TZ: "${BUSINESS_TZ:-}"
+      OWNER_PIN: "${OWNER_PIN:-}"
+      OWNER_PARTNER_ID: "${OWNER_PARTNER_ID:-}"
+      CAL_USER_ID: "${CAL_USER_ID:-}"
+      CAL_PARTNER_IDS: "${CAL_PARTNER_IDS:-}"
+      HELPDESK_TEAM_ID: "${HELPDESK_TEAM_ID:-}"
+      HELPDESK_USER_ID: "${HELPDESK_USER_ID:-}"
+      HELPDESK_STAGE_ID: "${HELPDESK_STAGE_ID:-}"
+      RUST_LOG: "${RUST_LOG:-info}"
     expose:
       - "8080"
+    networks:
+      - dokploy-network
+    labels:
+      - traefik.enable=true
+      - traefik.docker.network=dokploy-network
+      - traefik.http.routers.yeastar-gw.rule=Host(`api.tudominio.com`)
+      - traefik.http.routers.yeastar-gw.entrypoints=websecure
+      - traefik.http.routers.yeastar-gw.tls.certResolver=letsencrypt
+      - traefik.http.services.yeastar-gw.loadbalancer.server.port=8080
     read_only: true
     tmpfs:
       - /tmp
@@ -17,33 +49,12 @@ services:
       - ALL
     security_opt:
       - no-new-privileges:true
-    healthcheck:
-      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8080/health"]
-      interval: 30s
-      timeout: 5s
-      retries: 3
-      start_period: 10s
     logging:
       driver: json-file
       options:
         max-size: "10m"
         max-file: "3"
 
-  caddy:
-    image: caddy:2
-    restart: unless-stopped
-    ports:
-      - "80:80"
-      - "443:443"
-      - "443:443/udp"
-    volumes:
-      - ./deploy/Caddyfile.docker:/etc/caddy/Caddyfile:ro
-      - caddy_data:/data
-      - caddy_config:/config
-    depends_on:
-      gateway:
-        condition: service_healthy
-
-volumes:
-  caddy_data:
-  caddy_config:
+networks:
+  dokploy-network:
+    external: true
