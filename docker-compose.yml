@@ -1,4 +1,4 @@
-# Para desplegar en Dokploy como servicio "Compose" desde este repositorio.
+# Para desplegar en Dokploy como servicio "Compose" desde este repositorio (Modo Swarm).
 #
 # Antes de desplegar:
 #   1) Cambia api.tudominio.com por tu dominio en la etiqueta "rule".
@@ -35,6 +35,16 @@ services:
       - "8080"
     networks:
       - dokploy-network
+    # --- CONFIGURACIÓN AÑADIDA PARA MODO SWARM ---
+    deploy:
+      mode: replicated
+      replicas: 2  # Puedes cambiar el número de instancias según requieras
+      restart_policy:
+        condition: on-failure
+      update_config:
+        parallelism: 1
+        delay: 10s
+    # ---------------------------------------------
     labels:
       - traefik.enable=true
       - traefik.docker.network=dokploy-network
