@@ -5,7 +5,7 @@
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="dYMlJtACU-EkkOMhkFFQ-11" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="6" vertex="1">
-          <mxGeometry height="920" width="1560" x="121" y="500" as="geometry" />
+          <mxGeometry height="920" width="1560" x="110" y="500" as="geometry" />
         </mxCell>
         <mxCell id="dYMlJtACU-EkkOMhkFFQ-12" parent="dYMlJtACU-EkkOMhkFFQ-11" style="swimlane;whiteSpace=wrap;html=1;" value="CLUSTER DE VPS CON DOKPLOY" vertex="1">
           <mxGeometry height="284" width="420" x="830" y="80" as="geometry" />
@@ -58,19 +58,8 @@
         <mxCell id="dYMlJtACU-EkkOMhkFFQ-21" parent="dYMlJtACU-EkkOMhkFFQ-11" style="swimlane;whiteSpace=wrap;html=1;" value="Servidor de prueba de Pizarra PBX Yeastar en la Nube" vertex="1">
           <mxGeometry height="300" width="420" x="20" y="130" as="geometry" />
         </mxCell>
-        <mxCell id="dYMlJtACU-EkkOMhkFFQ-29" parent="dYMlJtACU-EkkOMhkFFQ-21" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/internet_globe.svg;labelPerimeter=1;" value="ISP" vertex="1">
-          <mxGeometry height="50" width="50" x="370" y="90" as="geometry" />
-        </mxCell>
         <mxCell id="dYMlJtACU-EkkOMhkFFQ-3" parent="dYMlJtACU-EkkOMhkFFQ-21" style="sketch=0;html=1;pointerEvents=1;dashed=0;fillColor=#036897;strokeColor=#ffffff;strokeWidth=2;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.cisco.misc.pbx;labelPerimeter=1;" value="" vertex="1">
           <mxGeometry height="57.99999999999999" width="57.99999999999999" x="92" y="86" as="geometry" />
-        </mxCell>
-        <mxCell id="dYMlJtACU-EkkOMhkFFQ-46" edge="1" parent="dYMlJtACU-EkkOMhkFFQ-21" source="dYMlJtACU-EkkOMhkFFQ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="dYMlJtACU-EkkOMhkFFQ-29">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="dYMlJtACU-EkkOMhkFFQ-47" connectable="0" parent="dYMlJtACU-EkkOMhkFFQ-46" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;" value="2" vertex="1">
-          <mxGeometry relative="1" x="0.1396" y="-2" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
         </mxCell>
         <mxCell id="LShYdQfcQsIGNRkjJxnK-55" parent="dYMlJtACU-EkkOMhkFFQ-21" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="El Agente de IA interactua por voz o texto con el cliente y le pide los datos correspondientes para realizar la tarea, luego se conecta al worker y le envia los datos para comprobar disponibilidad de fechas y realizar la tarea en el servidor de Odoo a traves del worker&amp;nbsp;" vertex="1">
           <mxGeometry height="30" width="160" x="150" y="160" as="geometry" />
@@ -272,6 +261,17 @@
         </mxCell>
         <mxCell id="dYMlJtACU-EkkOMhkFFQ-45" connectable="0" parent="dYMlJtACU-EkkOMhkFFQ-18" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;" value="1" vertex="1">
           <mxGeometry relative="1" x="0.2404" y="3" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dYMlJtACU-EkkOMhkFFQ-29" parent="dYMlJtACU-EkkOMhkFFQ-11" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/internet_globe.svg;labelPerimeter=1;" value="ISP" vertex="1">
+          <mxGeometry height="50" width="50" x="420" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="dYMlJtACU-EkkOMhkFFQ-46" edge="1" parent="dYMlJtACU-EkkOMhkFFQ-11" source="dYMlJtACU-EkkOMhkFFQ-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="dYMlJtACU-EkkOMhkFFQ-29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dYMlJtACU-EkkOMhkFFQ-47" connectable="0" parent="dYMlJtACU-EkkOMhkFFQ-46" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];inheritText=1;defaultLabelBackgroundColor=page;" value="2" vertex="1">
+          <mxGeometry relative="1" x="0.1396" y="-2" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
