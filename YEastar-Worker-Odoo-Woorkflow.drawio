@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net">
   <diagram name="Página-1" id="i6qXQvcwO733w99o9Ep2">
-    <mxGraphModel dx="2020" dy="1049" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="831" dy="431" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -42,7 +42,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="dYMlJtACU-EkkOMhkFFQ-2" parent="dYMlJtACU-EkkOMhkFFQ-11" style="verticalLabelPosition=bottom;aspect=fixed;html=1;shape=mxgraph.salesforce.web;fillColor=none;strokeColor=none;labelPerimeter=1;" value="&lt;div&gt;Cliente que llama o Chatea con el Agente de IA&amp;nbsp;&lt;/div&gt;&lt;div&gt;de la Pizzarra PBX en la nube&lt;/div&gt;&lt;div&gt;&amp;nbsp;y pide uno de varios servicios:&amp;nbsp; &amp;nbsp; &amp;nbsp;1--Agendar una cita con la compañia&lt;/div&gt;&lt;div&gt;2--Reportar un problema tecnico creando un ticket de soporte&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
-          <mxGeometry height="47.400000000000006" width="60" x="171" y="480" as="geometry" />
+          <mxGeometry height="47.400000000000006" width="60" x="180" y="520" as="geometry" />
         </mxCell>
         <mxCell id="dYMlJtACU-EkkOMhkFFQ-38" edge="1" parent="dYMlJtACU-EkkOMhkFFQ-11" source="dYMlJtACU-EkkOMhkFFQ-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;defaultLabelBackgroundColor=page;" target="dYMlJtACU-EkkOMhkFFQ-36">
           <mxGeometry relative="1" as="geometry">
